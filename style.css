@@ -1,0 +1,85 @@
+html {
+    height: 100%;
+    font-family: sans-serif;
+
+    --color-shadow: #333;
+    --color-light-shadow: #EEE;
+    --color-bright: rgb(255, 196, 0);
+    --color-alternate-bright: rgb(209, 0, 0);
+}
+
+body {
+    min-height: 100%;
+    font-size: 14px;
+    display: grid;
+    grid-template:  "head" 10rem
+                    "main" 1fr
+                    "foot" 4rem / 1fr;
+    margin: 0;
+}
+
+header, footer {
+    padding: 0 1rem;
+}
+
+@media(min-width: 72rem) {
+    header, footer {
+        padding: 0 10%;
+    }
+}
+
+header {
+    display: flex;
+    position: relative;
+    grid-area: head;
+    background-color: var(--color-shadow);
+    overflow: visible;
+    color: #fff;
+}
+
+header h1 {
+    line-height: 5rem;
+}
+
+header svg {
+    position: absolute;
+    left: 0;
+    top: calc(100% - 6rem / 2);
+    width: 100%;
+    height: 6rem;
+}
+
+#head-divider {
+    fill: url(#head-divider-gradient);
+}
+
+main {
+    grid-area: main;
+}
+
+#spotlight {
+    position: relative;
+    background-color: var(--color-light-shadow);
+    height: 40rem;
+}
+
+#spotlight svg {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+}
+
+#spotlight-divider {
+    fill: var(--color-light-shadow);
+}
+
+footer {
+    grid-area: foot;
+    background-color: var(--color-shadow);
+}
+
+svg {
+    z-index: 100;
+}

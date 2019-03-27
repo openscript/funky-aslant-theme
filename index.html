@@ -2,12 +2,26 @@
 <html lang="en">
     <head>
         <title>Funky aslant theme</title>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <header>
             <h1>Funky aslant theme</h1>
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                <linearGradient id="head-divider-gradient">
+                    <stop offset="0%" stop-color="var(--color-bright)" />
+                    <stop offset="100%" stop-color="var(--color-alternate-bright)" />
+                </linearGradient>
+                <polygon id="head-divider" points="0,20 0,60 100,100 100,0"/>
+            </svg>
         </header>
         <main>
+            <section id="spotlight">
+                Spot
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <polygon id="spotlight-divider" points="0,0 0,100 100,40 100,0"/>
+                </svg>
+            </section>
 
         </main>
         <footer>
