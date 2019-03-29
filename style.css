@@ -13,7 +13,7 @@ body {
     font-size: 14px;
     display: grid;
     grid-template:  "head" 10rem
-                    "head-divider" 10vw
+                    "head-divider" minmax(3rem, 4rem)
                     "main" 1fr
                     "foot" 4rem / 1fr;
     margin: 0;
@@ -21,7 +21,7 @@ body {
 }
 
 header, footer {
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
 
 @media(min-width: 72rem) {
@@ -37,8 +37,9 @@ header {
     background-color: var(--color-shadow);
     overflow: visible;
     color: #fff;
-    transform: rotate(-2deg);
+    transform: rotate(-1deg);
     margin: -2vw;
+    z-index: 10;
 }
 
 header h1 {
@@ -46,6 +47,44 @@ header h1 {
     flex-direction: column;
     align-self: center;
     font-size: 1.8rem;
+    padding-left: 2rem;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: flex;
+    margin: 0 0.25rem;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 1rem 1rem 1rem;
+    font-size: 1.2rem;
+    border-bottom: 4px solid transparent;
+}
+
+nav ul li a:hover {
+    border-bottom: 4px solid #fff;
+    background-color: #444;
+    transition: background 500ms;
 }
 
 h1 small {
@@ -53,11 +92,11 @@ h1 small {
 }
 
 #head-divider {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     grid-area: head-divider;
     background: linear-gradient(to right, var(--color-bright) 0%, var(--color-alternate-bright) 100%);
+    transform: rotate(2deg);
+    margin: -2vw;
+    z-index: 5;
 }
 
 #head-divider svg {
@@ -79,6 +118,7 @@ main {
     position: relative;
     background-color: var(--color-light-shadow);
     height: 40rem;
+    margin-bottom: 6rem;
 }
 
 #spotlight svg {
