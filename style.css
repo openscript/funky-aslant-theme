@@ -160,6 +160,8 @@ main section {
 }
 
 footer {
+    display: flex;
+    align-items: center;
     color: #fff;
     grid-area: foot;
     background-color: var(--color-shadow);
